@@ -1,18 +1,13 @@
 import pymysql
 from table import Table
 from data import Data
+from datetime import datetime
 
 class Database:
     def __init__(self):
-        self.conn=None
-        self.cur=None
-
-    # 생성해둔 DB 접속
-    def connect_db(self):
         self.conn=pymysql.connect(host="localhost",port=3306,user="root",password="0157",db="bio_observation_hub",charset="utf8")   #DB 연결
         self.cur=self.conn.cursor() #커서 생성
-        print('DataBase Connected!')
-
+        
     # DB 연결 종료
     def close_db(self):
         self.conn.commit()  #테이블 변경사항 저장
@@ -20,16 +15,16 @@ class Database:
         self.conn.close()   #DB 접속 종료
         print('DataBase Saved & Closed')
 
-    #table 생성
+    #table 생성(동작 good~)
     def create_table(self):
+        self.cur.execute(Table.create_researcher_table)
+        self.cur.execute(Table.create_conservation_program_table)
         self.cur.execute(Table.create_species_table)
         self.cur.execute(Table.create_habitat_table)
         self.cur.execute(Table.create_observation_record_table)
-        self.cur.execute(Table.create_researcher_table)
-        self.cur.execute(Table.create_conservation_program_table)
         print('Created Table')
 
-    #table 삭제
+    #table 삭제(동작 good~)
     def drop_table(self, table_name):
         drop_query = f"DROP TABLE IF EXISTS {table_name}"
         self.cur.execute(drop_query)
@@ -37,20 +32,21 @@ class Database:
 
     #data 삽입
     def insert_data(self):
-        insert_species_query = "INSERT INTO Species (Name, Family, ConservationStatus) VALUES (%s, %s, %s)"
-        self.cur.executemany(insert_species_query, Data.species_data)
-
-        insert_habitat_query = "INSERT INTO Habitat (Name, Location, Climate, Area) VALUES (%s, %s, %s, %s)"
-        self.cur.executemany(insert_habitat_query, Data.habitat_data)
-
-        insert_researcher_query = "INSERT INTO Researcher (FirstName, LastName, Affiliation) VALUES (%s, %s, %s)"
-        self.cur.executemany(insert_researcher_query, Data.researcher_data)
-
-        insert_program_query = "INSERT INTO ConservationProgram (Name, StartDate, EndDate, Description) VALUES (%s, %s, %s, %s)"
-        self.cur.executemany(insert_program_query, Data.program_data)
-
-        insert_observation_query = "INSERT INTO ObservationRecord (SpeciesID, HabitatID, ResearcherID, ObservationDate, Notes) VALUES (%s, %s, %s, %s, %s)"
-        self.cur.executemany(insert_observation_query, Data.observation_data)
+        insert_species="INSERT INTO Species (SpeciesID, Name, Family, ConservationStatus) VALUES (%s, %s, %s, %s)"
+        self.cur.executemany(insert_species,Data.species_data)
+        insert_habitat="INSERT INTO Habitat (HabitatID, Name, Location, Climate, Area) VALUES (%s, %s, %s, %s, %s)"
+        self.cur.executemany(insert_habitat, Data.habitat_data)
+        insert_researcher = "INSERT INTO Researcher (ResearcherID, FirstName, LastName, Affiliation) VALUES (%s, %s, %s, %s)"
+        self.cur.executemany(insert_researcher,Data.researcher_data)
+        insert_program = "INSERT INTO ConservationProgram (ProgramID, Name, StartDate, EndDate, Description) VALUES (%s, %s, %s, %s, %s)"
+        self.cur.executemany(insert_program,Data.program_data)
+        insert_record = "INSERT INTO ObservationRecord (RecordID, SpeciesID, HabitatID, ResearcherID, ObservationDate, Notes) VALUES (%s, %s, %s, %s ,%s, %s)"
+        self.cur.executemany(insert_record,Data.observation_data)
         
-        print('Insert Complate!')
         self.conn.commit()
+        
+    """def insert_data(self):
+        insert_species="INSERT INTO Species (Name, Family, ConservationStatus) VALUES (%s, %s, %s)"
+        self.cur.executemany(insert_species,Data.species_data)
+    """
+    

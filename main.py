@@ -7,9 +7,6 @@ def main():
     while True:
         try:    
             user_input = input("1: 테이블 생성, 2: 테이블 삭제, 3: 데이터 삽입 , 4: 조인 1, 5: 조인 2, 'q' 는 quit: ")
-        
-            #DB 연결
-            bio_db.connect_db()
 
             # 'q'를 입력하면 프로그램 종료
             if user_input.lower() == 'q':
@@ -27,17 +24,17 @@ def main():
             
             elif user_input == 2:            
                 #테이블 삭제
-                table_to_drop = input("Which one drop your_table?: ")    #이 부분 사용자 입력으로 바꿔야함
+                table_to_drop = input("Which one drop your_table?: ")
                 bio_db.drop_table(table_to_drop)
                 
             elif user_input == 3:
                 bio_db.insert_data()
 
             elif user_input == 4:
-                function_for_4()
+                Query.join_1()
             
             elif user_input == 5:
-                function_for_5()
+                Query.join_2()
             
             else:
                 print("Invalid input. Please enter a number between 1 and 5.")
