@@ -5,8 +5,8 @@ class JoinQuery:
     SELECT Species.Name AS SpeciesName, Species.Family, Species.ConservationStatus,
            Habitat.Name AS HabitatName, Habitat.Location, Habitat.Climate, Habitat.Area
     FROM Species
-    INNER JOIN ObservationRecord ON Species.SpeciesID = ObservationRecord.SpeciesID
-    INNER JOIN Habitat ON ObservationRecord.HabitatID = Habitat.HabitatID;
+    LEFT JOIN ObservationRecord ON Species.SpeciesID = ObservationRecord.SpeciesID
+    LEFT JOIN Habitat ON ObservationRecord.HabitatID = Habitat.HabitatID;
     """
 
     # 관찰 기록(ObservationRecord)과 연구원(Researcher) 정보를 함께 가져오는 쿼리

@@ -5,7 +5,7 @@ def main():
 
     while True:
         try:    
-            user_input = input("1: 테이블 생성, 2: 테이블 삭제, 3: 데이터 삽입 , 4: 조인 1, 5: 조인 2, 'q' 는 quit: ")
+            user_input = input("1: 테이블 생성, 2: 테이블 삭제, 3: 데이터 삽입 , 4: 조인 ('q' 는 quit) : ")
 
             # 'q'를 입력하면 프로그램 종료
             if user_input.lower() == 'q':
@@ -30,7 +30,15 @@ def main():
                 bio_db.insert_data()
 
             elif user_input == 4:
-                bio_db.join1()
+                query=input("Select 1~3 Join : ")
+                if query == 1:
+                    bio_db.join1()
+                elif query == 2:
+                    bio_db.join2()
+                elif query == 3:
+                    bio_db.join3()
+                else:
+                    print("Invalid input. Please enter a number between 1 and 3.")
 
             else:
                 print("Invalid input. Please enter a number between 1 and 5.")
