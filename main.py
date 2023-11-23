@@ -1,5 +1,4 @@
-from connection import Database
-from query import Query
+from function import Database
 
 def main():
     bio_db=Database()
@@ -29,6 +28,9 @@ def main():
                 
             elif user_input == 3:
                 bio_db.insert_data()
+
+            elif user_input == 4:
+                bio_db.join1()
 
             else:
                 print("Invalid input. Please enter a number between 1 and 5.")

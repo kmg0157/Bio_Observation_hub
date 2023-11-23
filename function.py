@@ -1,7 +1,8 @@
 import pymysql
 from table import Table
 from data import Data
-from datetime import datetime
+from join import JoinQuery
+import pandas as pd
 
 class Database:
     def __init__(self):
@@ -42,7 +43,14 @@ class Database:
         self.cur.executemany(insert_program,Data.program_data)
         insert_record = "INSERT INTO ObservationRecord (RecordID, SpeciesID, HabitatID, ResearcherID, ObservationDate, Notes) VALUES (%s, %s, %s, %s ,%s, %s)"
         self.cur.executemany(insert_record,Data.observation_data)
-        
         self.conn.commit()
 
+    #조인 1
+    def join1(self):
+        self.cur.execute(JoinQuery.join_species_habitat)
+        result=self.cur.fetchall()
+        columns=[desc[0] for desc in self.cur.description]
+        result_df=pd.DataFrame(result,cloumns=columns)
+
+        print(result_df)
     
