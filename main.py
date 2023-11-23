@@ -30,12 +30,6 @@ def main():
             elif user_input == 3:
                 bio_db.insert_data()
 
-            elif user_input == 4:
-                Query.join_1()
-            
-            elif user_input == 5:
-                Query.join_2()
-            
             else:
                 print("Invalid input. Please enter a number between 1 and 5.")
 
