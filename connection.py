@@ -44,9 +44,5 @@ class Database:
         self.cur.executemany(insert_record,Data.observation_data)
         
         self.conn.commit()
-        
-    """def insert_data(self):
-        insert_species="INSERT INTO Species (Name, Family, ConservationStatus) VALUES (%s, %s, %s)"
-        self.cur.executemany(insert_species,Data.species_data)
-    """
+
     
