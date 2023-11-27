@@ -31,12 +31,13 @@ def main():
 
             elif user_input == 4:
                 query=input("Select 1~3 Join : ")
-                if query == '1':
+                query=int(query)
+                if query == 1:
                     print(1)
                     bio_db.join1()
-                elif query == '2':
+                elif query == 2:
                     bio_db.join2()
-                elif query == '3':
+                elif query == 3:
                     bio_db.join3()
                 else:
                     print("Invalid input. Please enter a number between 1 and 3.")
