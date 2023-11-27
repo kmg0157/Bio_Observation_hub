@@ -1,0 +1,11 @@
+RecordID,SpeciesID,HabitatID,ResearcherID,ObservationDate,Notes,SpeciesID,Name,Family,ConservationStatus,HabitatID,Name,Location,Climate,Area
+101,1,11,21,2023-01-15,Observed a Bengal Tiger hunting in the rainforest.,1,Bengal Tiger,Felidae,Endangered,11,Amazon Rainforest,South America,Tropical,6700000.0
+102,3,13,22,2023-02-02,Elephants migrating across the Serengeti.,3,African Elephant,Elephantidae,Vulnerable,13,Serengeti Plain,Africa,Savannah,30000.0
+103,5,16,23,2023-03-10,Amur Leopards spotted on the Galápagos Islands.,5,Amur Leopard,Felidae,Critically Endangered,16,Galápagos Islands,Ecuador,Arid,7880.0
+104,7,17,24,2023-04-05,Hawksbill Turtle nesting in the Arctic Tundra.,7,Hawksbill Turtle,Cheloniidae,Critically Endangered,17,Arctic Tundra,Arctic Circle,Polar,8500000.0
+105,10,19,25,2023-05-20,Western Lowland Gorilla family observed in Madagascar.,10,Western Lowland Gorilla,Hominidae,Critically Endangered,19,Madagascar Forest,Madagascar,Tropical,587000.0
+106,2,12,26,2023-06-18,Giant Pandas feeding on bamboo in the Great Barrier Reef.,2,Giant Panda,Ursidae,Vulnerable,12,Great Barrier Reef,Australia,Tropical,344400.0
+107,4,14,27,2023-07-22,Red-crowned Cranes flying over the Himalayan Mountains.,4,Red-crowned Crane,Gruidae,Endangered,14,Himalayan Mountains,Asia,Alpine,2400000.0
+108,6,15,28,2023-08-30,Sumatran Orangutans playing in the Everglades.,6,Sumatran Orangutan,Hominidae,Critically Endangered,15,Everglades,United States,Subtropical,2300000.0
+109,8,18,29,2023-09-14,California Condors soaring over the Patagonian Desert.,8,California Condor,Cathartidae,Critically Endangered,18,Patagonian Desert,Argentina,Desert,673000.0
+110,9,20,30,2023-10-05,Snow Leopards resting in the Boreal Forest.,9,Snow Leopard,Felidae,Vulnerable,20,Boreal Forest,Canada,Boreal,8500000.0

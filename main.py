@@ -33,7 +33,6 @@ def main():
                 query=input("Select 1~3 Join : ")
                 query=int(query)
                 if query == 1:
-                    print(1)
                     bio_db.join1()
                 elif query == 2:
                     bio_db.join2()

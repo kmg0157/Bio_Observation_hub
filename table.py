@@ -25,9 +25,11 @@ class Table():
     create_researcher_table = """
     CREATE TABLE IF NOT EXISTS Researcher (
         ResearcherID INT PRIMARY KEY,
+        ProgramID INT,
         FirstName VARCHAR(50) NOT NULL,
         LastName VARCHAR(50) NOT NULL,
-        Affiliation VARCHAR(255)
+        Affiliation VARCHAR(255),
+        FOREIGN KEY (ProgramID) REFERENCES ConservationProgram(ProgramID)
     );
     """
 

@@ -29,16 +29,16 @@ class Data:
     
     # 연구자 데이터 삽입
     researcher_data = [
-    (21, "John", "Smith", "Wildlife Conservation Institute"),
-    (22, "Emily", "Johnson", "Serengeti Wildlife Foundation"),
-    (23, "David", "Kim", "Galápagos Research Society"),
-    (24, "Lisa", "Rodriguez", "Arctic Wildlife Fund"),
-    (25, "Michael", "Lee", "Primate Protection Organization"),
-    (26, "Sarah", "Brown", "Panda Preservation Project"),
-    (27, "Robert", "Chen", "Crane Conservation Society"),
-    (28, "Olivia", "Wang", "Orangutan Alliance"),
-    (29, "Daniel", "Garcia", "Condor Conservation Coalition"),
-    (30, "Jessica", "Park", "Snow Leopard Trust")
+    (21, 35, "John", "Smith", "Wildlife Conservation Institute"),
+    (22, 34, "Emily", "Johnson", "Serengeti Wildlife Foundation"),
+    (23, 38, "David", "Kim", "Galapagos Research Society"),
+    (24, 31, "Lisa", "Rodriguez", "Arctic Wildlife Fund"),
+    (25, 32, "Michael", "Lee", "Primate Protection Organization"),
+    (26, 37, "Sarah", "Brown", "Panda Preservation Project"),
+    (27, 36,"Robert", "Chen", "Crane Conservation Society"),
+    (28, 40, "Olivia", "Wang", "Orangutan Alliance"),
+    (29, 33, "Daniel", "Garcia", "Condor Conservation Coalition"),
+    (30, 39, "Jessica", "Park", "Snow Leopard Trust")
     ]
     
     # 보호 프로그램 데이터 삽입

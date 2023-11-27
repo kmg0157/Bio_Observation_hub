@@ -17,9 +17,9 @@ class Database:
         print('DataBase Saved & Closed')
 
     #table 생성(동작 good~)
-    def create_table(self):
-        self.cur.execute(Table.create_researcher_table)
+    def create_table(self): 
         self.cur.execute(Table.create_conservation_program_table)
+        self.cur.execute(Table.create_researcher_table)
         self.cur.execute(Table.create_species_table)
         self.cur.execute(Table.create_habitat_table)
         self.cur.execute(Table.create_observation_record_table)
@@ -37,13 +37,14 @@ class Database:
         self.cur.executemany(insert_species,Data.species_data)
         insert_habitat="INSERT INTO Habitat (HabitatID, Name, Location, Climate, Area) VALUES (%s, %s, %s, %s, %s)"
         self.cur.executemany(insert_habitat, Data.habitat_data)
-        insert_researcher = "INSERT INTO Researcher (ResearcherID, FirstName, LastName, Affiliation) VALUES (%s, %s, %s, %s)"
-        self.cur.executemany(insert_researcher,Data.researcher_data)
         insert_program = "INSERT INTO ConservationProgram (ProgramID, Name, StartDate, EndDate, Description) VALUES (%s, %s, %s, %s, %s)"
         self.cur.executemany(insert_program,Data.program_data)
+        insert_researcher = "INSERT INTO Researcher (ResearcherID, ProgramID, FirstName, LastName, Affiliation) VALUES (%s, %s, %s, %s, %s)"
+        self.cur.executemany(insert_researcher,Data.researcher_data)
         insert_record = "INSERT INTO ObservationRecord (RecordID, SpeciesID, HabitatID, ResearcherID, ObservationDate, Notes) VALUES (%s, %s, %s, %s ,%s, %s)"
         self.cur.executemany(insert_record,Data.observation_data)
         self.conn.commit()
+
 
     #조인 1
     def join1(self):
@@ -54,6 +55,13 @@ class Database:
 
         print(result_df)
 
+        response=input('Do you wanna save joined result? (yes/no) :')
+        if response=='yes':
+            result_df.to_csv('joined_result1.csv',index=False)
+            print('Saved in joined_result1.csv')
+        else:
+            print('not saved TT')
+
     #조인 2
     def join2(self):
         self.cur.execute(JoinQuery.query2)
@@ -62,6 +70,12 @@ class Database:
         result_df=pd.DataFrame(result,columns=columns)
 
         print(result_df)
+        response=input('Do you wanna save joined result? (yes/no) :')
+        if response=='yes':
+            result_df.to_csv('joined_result2.csv',index=False)
+            print('Saved in joined_result2.csv')
+        else:
+            print('not saved TT')
     
     #조인 3
     def join3(self):
@@ -71,3 +85,11 @@ class Database:
         result_df=pd.DataFrame(result,columns=columns)
 
         print(result_df)
+        response=input('Do you wanna save joined result? (yes/no) :')
+        if response=='yes':
+            result_df.to_csv('joined_result3.csv',index=False)
+            print('Saved in joined_result3.csv')
+        else:
+            print('not saved TT')
+    
+    
