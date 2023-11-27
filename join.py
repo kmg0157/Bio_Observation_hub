@@ -1,7 +1,7 @@
 
 class JoinQuery:
     # 종(Species)와 서식지(Habitat) 정보를 함께 가져오는 쿼리
-    join_species_habitat = """
+    query1 = """
     SELECT Species.Name AS SpeciesName, Species.Family, Species.ConservationStatus,
            Habitat.Name AS HabitatName, Habitat.Location, Habitat.Climate, Habitat.Area
     FROM Species
@@ -10,15 +10,21 @@ class JoinQuery:
     """
 
     # 관찰 기록(ObservationRecord)과 연구원(Researcher) 정보를 함께 가져오는 쿼리
-    join_observation_researcher = """
-    SELECT ObservationRecord.RecordID, ObservationRecord.ObservationDate, ObservationRecord.Notes,
-           Researcher.FirstName, Researcher.LastName, Researcher.Affiliation
-    FROM ObservationRecord
-    INNER JOIN Researcher ON ObservationRecord.ResearcherID = Researcher.ResearcherID;
+    query2 = """
+    SELECT
+    ObservationRecord.RecordID,
+    Researcher.FirstName,
+    Researcher.LastName,
+    ObservationRecord.ObservationDate,
+    ObservationRecord.Notes
+    FROM
+    ObservationRecord
+    JOIN
+    Researcher ON ObservationRecord.ResearcherID = Researcher.ResearcherID;
     """
     
     #종(Species), 서식지(Habitat), 연구원(Researcher) 정보를 함께 가져오는 쿼리
-    join_species_habitat_researcher = """
+    query3 = """
     SELECT Species.Name AS SpeciesName, Species.Family, Species.ConservationStatus,
            Habitat.Name AS HabitatName, Habitat.Location, Habitat.Climate, Habitat.Area,
            Researcher.FirstName, Researcher.LastName, Researcher.Affiliation

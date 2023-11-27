@@ -47,7 +47,7 @@ class Database:
 
     #조인 1
     def join1(self):
-        self.cur.execute(JoinQuery.join_species_habitat)
+        self.cur.execute(JoinQuery.query1)
         result=self.cur.fetchall()
         columns=[desc[0] for desc in self.cur.description]
         result_df=pd.DataFrame(result,columns=columns)
@@ -56,7 +56,7 @@ class Database:
 
     #조인 2
     def join2(self):
-        self.cur.execute(JoinQuery.join_observation_researcher)
+        self.cur.execute(JoinQuery.query2)
         result=self.cur.fetchall()
         columns=[desc[0] for desc in self.cur.description]
         result_df=pd.DataFrame(result,columns=columns)
@@ -65,7 +65,7 @@ class Database:
     
     #조인 3
     def join3(self):
-        self.cur.execute(JoinQuery.join_species_habitat_researcher)
+        self.cur.execute(JoinQuery.query3)
         result=self.cur.fetchall()
         columns=[desc[0] for desc in self.cur.description]
         result_df=pd.DataFrame(result,columns=columns)
