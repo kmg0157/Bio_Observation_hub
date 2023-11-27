@@ -2,6 +2,7 @@ import pymysql
 from table import Table
 from data import Data
 from join import JoinQuery
+from query import Query
 import pandas as pd
 
 class Database:
@@ -91,5 +92,10 @@ class Database:
             print('Saved in joined_result3.csv')
         else:
             print('not saved TT')
-    
+
+    #쿼리1(서브쿼리1)
+    def query1(self):
+        df_query1 = pd.read_sql_query(Query.query1, self.conn)
+        print(df_query1)
+
     
