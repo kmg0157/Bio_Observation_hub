@@ -1,5 +1,3 @@
-from datetime import date
-
 class Data:
     # 종 데이터
     species_data = [
