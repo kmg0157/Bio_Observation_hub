@@ -20,7 +20,7 @@ class Data:
     (13, "Serengeti Plain", "Africa", "Savannah", 30000),
     (14, "Himalayan Mountains", "Asia", "Alpine", 2400000),
     (15, "Everglades", "United States", "Subtropical", 2300000),
-    (16, "Galápagos Islands", "Ecuador", "Arid", 7880),
+    (16, "Jeju Islands", "Ecuador", "Arid", 7880),
     (17, "Arctic Tundra", "Arctic Circle", "Polar", 8500000),
     (18, "Patagonian Desert", "Argentina", "Desert", 673000),
     (19, "Madagascar Forest", "Madagascar", "Tropical", 587000),
@@ -31,11 +31,11 @@ class Data:
     researcher_data = [
     (21, 35, "John", "Smith", "Wildlife Conservation Institute"),
     (22, 34, "Emily", "Johnson", "Serengeti Wildlife Foundation"),
-    (23, 38, "David", "Kim", "Galapagos Research Society"),
+    (23, 38, "David", "Kim", "Wildlife Conservation Institute"),
     (24, 31, "Lisa", "Rodriguez", "Arctic Wildlife Fund"),
     (25, 32, "Michael", "Lee", "Primate Protection Organization"),
     (26, 37, "Sarah", "Brown", "Panda Preservation Project"),
-    (27, 36,"Robert", "Chen", "Crane Conservation Society"),
+    (27, 36,"Robert", "Chen", "Wildlife Conservation Institute"),
     (28, 40, "Olivia", "Wang", "Orangutan Alliance"),
     (29, 33, "Daniel", "Garcia", "Condor Conservation Coalition"),
     (30, 39, "Jessica", "Park", "Snow Leopard Trust")
