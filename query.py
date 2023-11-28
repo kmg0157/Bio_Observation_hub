@@ -44,7 +44,7 @@ class Query:
     """
 
     #종(Species)별로 관측된 횟수와 전체 넓이의 합을 계산하는 쿼리   
-    query4="""
+    query5="""
     SELECT Species.Name, COUNT(*) as ObservationCount, SUM(Habitat.Area) as TotalArea
     FROM ObservationRecord
     JOIN Species ON ObservationRecord.SpeciesID = Species.SpeciesID
@@ -53,7 +53,7 @@ class Query:
     """
 
     #서식지(Habitat)별로 관측된 횟수와 해당 서식지의 최대 넓이를 계산하는 쿼리   
-    query4="""
+    query6="""
     SELECT Habitat.Name, COUNT(*) as ObservationCount, MAX(Habitat.Area) as MaxArea
     FROM ObservationRecord
     JOIN Habitat ON ObservationRecord.HabitatID = Habitat.HabitatID
@@ -61,7 +61,7 @@ class Query:
     """
 
     #연구자(Researcher)별로 수행한 관측 횟수와 해당 연구자의 관측 기록의 평균 넓이를 계산하는 쿼리   
-    query4="""
+    query7="""
     SELECT CONCAT(Researcher.FirstName, ' ', Researcher.LastName) as ResearcherName, COUNT(*) as ObservationCount, AVG(Habitat.Area) as AvgArea
     FROM ObservationRecord
     JOIN Researcher ON ObservationRecord.ResearcherID = Researcher.ResearcherID
@@ -70,7 +70,7 @@ class Query:
     """
 
     #보전 프로그램(Conservation Program)별로 참여한 연구자 수와 프로그램의 평균 기간을 계산하는 쿼리   
-    query4="""
+    query8="""
     SELECT ConservationProgram.Name, COUNT(DISTINCT Researcher.ResearcherID) as ResearcherCount, AVG(DATEDIFF(ConservationProgram.EndDate, ConservationProgram.StartDate)) as AvgProgramDuration
     FROM ConservationProgram
     JOIN Researcher ON ConservationProgram.ProgramID = Researcher.ProgramID

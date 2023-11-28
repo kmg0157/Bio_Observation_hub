@@ -98,4 +98,41 @@ class Database:
         df_query1 = pd.read_sql_query(Query.query1, self.conn)
         print(df_query1)
 
+    #쿼리2(서브쿼리2)
+    def query2(self):
+        df_query2 = pd.read_sql_query(Query.query2, self.conn)
+        print(df_query2)
+
+    #쿼리3(서브쿼리3)
+    def query3(self):
+        df_query3 = pd.read_sql_query(Query.query3, self.conn)
+        print(df_query3)
+
+    #쿼리4(서브쿼리4)
+    def query4(self):
+        df_query4 = pd.read_sql_query(Query.query4, self.conn)
+        print(df_query4)
+
+    #쿼리5(집계서브쿼리1)
+    def query5(self):
+        df_query5 = pd.read_sql_query(Query.query5, self.conn)
+        print(df_query5)
+
+    #쿼리6(집계서브쿼리2)
+    def query6(self):
+        df_query6 = pd.read_sql_query(Query.query6, self.conn)
+        print(df_query6)
+
+    #쿼리7(집계서브쿼리3)
+    def query5(self):
+        df_query7 = pd.read_sql_query(Query.query7, self.conn)
+        print(df_query7)
+
+    #쿼리8(집계서브쿼리4)
+    def query5(self):
+        df_query8 = pd.read_sql_query(Query.query8, self.conn)
+        print(df_query8)
+
+
+
     
