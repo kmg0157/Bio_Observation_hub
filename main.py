@@ -30,7 +30,7 @@ def main():
                 bio_db.insert_data()
 
             elif user_input == 4:
-                joiny=input("\n Select 1~3 Join : ")
+                join=input("\n Select 1~3 Join : ")
                 join=int(join)
                 if join == 1:
                     bio_db.join1()
@@ -47,9 +47,19 @@ def main():
                 if query == 1:
                     bio_db.query1()
                 elif query == 2:
-                    bio_db.join2()
+                    bio_db.query2()
                 elif query == 3:
-                    bio_db.join3()
+                    bio_db.query3()
+                elif query == 4:
+                    bio_db.query4()
+                elif query == 5:
+                    bio_db.query5()
+                elif query == 6:
+                    bio_db.query6()
+                elif query == 7:
+                    bio_db.query7()
+                elif query == 8:
+                    bio_db.query8()
                 else:
                     print("\n Invalid input. Please enter a number between 1 and 3.")
 

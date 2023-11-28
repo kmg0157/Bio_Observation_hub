@@ -124,12 +124,12 @@ class Database:
         print(df_query6)
 
     #쿼리7(집계서브쿼리3)
-    def query5(self):
+    def query7(self):
         df_query7 = pd.read_sql_query(Query.query7, self.conn)
         print(df_query7)
 
     #쿼리8(집계서브쿼리4)
-    def query5(self):
+    def query8(self):
         df_query8 = pd.read_sql_query(Query.query8, self.conn)
         print(df_query8)
 

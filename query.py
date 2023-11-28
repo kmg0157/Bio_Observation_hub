@@ -17,7 +17,7 @@ class Query:
     WHERE HabitatID IN (
         SELECT HabitatID 
         FROM Habitat 
-        WHERE Name = 'YourHabitatName'
+        WHERE Name = 'Madagascar Forest'
         );
     """
 
@@ -28,7 +28,7 @@ class Query:
     WHERE ResearcherID IN (
         SELECT ResearcherID 
         FROM Researcher 
-        WHERE FirstName = 'ResearcherFirstName' AND LastName = 'ResearcherLastName'
+        WHERE FirstName = 'Jessica' AND LastName = 'Park'
         );
     """
 
@@ -39,7 +39,7 @@ class Query:
     WHERE ProgramID IN (
         SELECT ProgramID 
         FROM ConservationProgram 
-        WHERE Name = 'YourProgramName'
+        WHERE Name = 'Panda Habitat Restoration'
         );
     """
 
