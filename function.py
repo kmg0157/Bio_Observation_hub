@@ -17,7 +17,7 @@ class Database:
         self.conn.close()   #DB 접속 종료
         print('DataBase Saved & Closed')
 
-    #table 생성(동작 good~)
+    #table 생성
     def create_table(self): 
         self.cur.execute(Table.create_conservation_program_table)
         self.cur.execute(Table.create_researcher_table)
@@ -26,7 +26,7 @@ class Database:
         self.cur.execute(Table.create_observation_record_table)
         print('Created Table')
 
-    #table 삭제(동작 good~)
+    #table 삭제
     def drop_table(self, table_name):
         drop_query = f"DROP TABLE IF EXISTS {table_name}"
         self.cur.execute(drop_query)

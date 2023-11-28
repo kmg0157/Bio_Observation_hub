@@ -29,7 +29,8 @@ class Table():
         FirstName VARCHAR(50) NOT NULL,
         LastName VARCHAR(50) NOT NULL,
         Affiliation VARCHAR(255),
-        FOREIGN KEY (ProgramID) REFERENCES ConservationProgram(ProgramID)
+        FOREIGN KEY (ProgramID) 
+        REFERENCES ConservationProgram(ProgramID)
     );
     """
 
@@ -51,9 +52,12 @@ class Table():
         ResearcherID INT,
         ObservationDate DATE,
         Notes TEXT,
-        FOREIGN KEY (SpeciesID) REFERENCES Species(SpeciesID),
-        FOREIGN KEY (HabitatID) REFERENCES Habitat(HabitatID),
-        FOREIGN KEY (ResearcherID) REFERENCES Researcher(ResearcherID)
+        FOREIGN KEY (SpeciesID) 
+        REFERENCES Species(SpeciesID),
+        FOREIGN KEY (HabitatID) 
+        REFERENCES Habitat(HabitatID),
+        FOREIGN KEY (ResearcherID) 
+        REFERENCES Researcher(ResearcherID)
     );
     """
 
